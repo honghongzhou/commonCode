@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex布局，超过一行/两行溢出</title>
+    <style>
+        .parent, .box {
+            /* width: 300px; */
+            display: flex;
+            border: 1px solid #000;
+        }
+        .left, .box-left {
+            flex: 0 0 100px;
+            background-color: red;
+        }
+        .right {
+            flex: 1;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        .box-right {
+            flex: 1;
+            display: -webkit-box;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+    </style>
+</head>
+<body>
+    <p>单行溢出</p>
+    <div class="parent">
+        <div class="left">左边内容固定</div>
+        <div class="right">右边超过一行溢出右边超过一行溢出右边超过一行溢出右边超过一行溢出</div>
+    </div>
+    <p>多行溢出</p>
+    <div class="box">
+        <div class="box-left">左边内容固定</div>
+        <div class="box-right">右边超过两行溢出右边超过两行溢出右边超过两行溢出右边超过两行溢出右边超过两行溢出右边超过两行溢出右边超过两行溢出</div>
+    </div>
+</body>
+</html>
